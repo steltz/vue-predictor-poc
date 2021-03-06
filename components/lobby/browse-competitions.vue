@@ -6,7 +6,7 @@
       </header>
     </v-col>
     <v-col cols="12" sm="12" class="d-flex justify-space-between">
-      <v-btn height="60" width="60" class="contest d-flex justify-center align-center" @click="competitionSelected('sports-predictor')">
+      <v-btn height="60" width="60" class="contest d-flex justify-center align-center" @click="competitionSelected('all')">
         Sports<br>Predictor
       </v-btn>
       <v-btn height="60" width="60" class="contest d-flex justify-center align-center" @click="competitionSelected('premier-league')">
@@ -15,10 +15,10 @@
       <v-btn height="60" width="60" class="contest d-flex justify-center align-center" @click="competitionSelected('golf')">
         Golf
       </v-btn>
-      <v-btn height="60" width="60" class="contest d-flex justify-center align-center" @click="competitionSelected('nfl')">
+      <v-btn height="60" width="60" class="contest d-flex justify-center align-center">
         NFL
       </v-btn>
-      <v-btn height="60" width="60" class="contest d-flex justify-center align-center" @click="competitionSelected('nascar')">
+      <v-btn height="60" width="60" class="contest d-flex justify-center align-center">
         Nascar
       </v-btn>
     </v-col>

@@ -1,5 +1,5 @@
 export const state = () => ({
-  selectedCompetition: null
+  selectedCompetition: 'all'
 })
 
 export const mutations = {
