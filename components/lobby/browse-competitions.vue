@@ -28,8 +28,8 @@
 <script>
 export default {
   methods: {
-    competitionSelected (competition) {
-      this.$store.commit('appState/SET_SELECTED_COMPETITION', competition)
+    competitionSelected (type) {
+      this.$store.commit('appState/SET_SELECTED_COMPETITION_TYPE', type)
     }
   }
 }
