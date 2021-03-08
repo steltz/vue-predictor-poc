@@ -53,11 +53,22 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer :absolute="!fixed" app class="d-flex justify-space-between">
+      <v-btn icon :class="{ primary: $route.path === '/' }" @click="navigate('/')">
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
+      <v-btn icon :class="{ primary: $route.path === '/lobby' }" @click="navigate('/lobby')">
+        <v-icon>mdi-format-list-bulleted</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-trophy</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-account-group</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-account-circle</v-icon>
+      </v-btn>
     </v-footer>
   </v-app>
 </template>
@@ -86,6 +97,7 @@ export default {
           to: '/lobby'
         }
       ],
+      path: null,
       title: 'Vuetify.js'
     }
   },
@@ -93,11 +105,25 @@ export default {
     ...mapState('appState', ['showLoadingSpinner', 'snackbar'])
   },
   watch: {
+    // $route: {
+    //   handler (route) {
+    //     const { path } = route
+    //     debugger
+    //     this.currentPath = path
+    //   },
+    //   deep: true,
+    //   immediate: true
+    // },
     snackbar () {
       this.isSnackbarVisible = true
       setTimeout(() => {
         this.isSnackbarVisible = false
       }, 3000)
+    }
+  },
+  methods: {
+    navigate (path) {
+      this.$router.push({ path })
     }
   }
 }
