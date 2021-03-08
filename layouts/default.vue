@@ -60,13 +60,13 @@
       <v-btn icon :class="{ primary: $route.path === '/lobby' }" @click="navigate('/lobby')">
         <v-icon>mdi-format-list-bulleted</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn icon :class="{ primary: $route.path === '/live-results' }" @click="navigate('/live-results')">
         <v-icon>mdi-trophy</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn icon :class="{ primary: $route.path === '/leagues' }" @click="navigate('/leagues')">
         <v-icon>mdi-account-group</v-icon>
       </v-btn>
-      <v-btn icon>
+      <v-btn icon :class="{ primary: $route.path === '/my-account' }" @click="navigate('/my-account')">
         <v-icon>mdi-account-circle</v-icon>
       </v-btn>
     </v-footer>
@@ -105,15 +105,6 @@ export default {
     ...mapState('appState', ['showLoadingSpinner', 'snackbar'])
   },
   watch: {
-    // $route: {
-    //   handler (route) {
-    //     const { path } = route
-    //     debugger
-    //     this.currentPath = path
-    //   },
-    //   deep: true,
-    //   immediate: true
-    // },
     snackbar () {
       this.isSnackbarVisible = true
       setTimeout(() => {
