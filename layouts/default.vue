@@ -1,5 +1,24 @@
 <template>
   <v-app dark>
+    <app-loading-spinner
+      :active="showLoadingSpinner"
+      background-color="#fff"
+      color="#fff"
+      :height="64"
+      loader="bars"
+      :opacity="0.2"
+      transition="fade"
+      :width="64"
+    />
+    <v-snackbar
+      :value="snackbar.visible"
+      :color="snackbar.color"
+      :timeout="3000"
+      top
+      outlined
+    >
+      {{ snackbar.message }}
+    </v-snackbar>
     <v-navigation-drawer
       v-model="drawer"
       fixed
@@ -44,7 +63,13 @@
 </template>
 
 <script>
+import AppLoadingSpinner from 'vue-loading-overlay'
+import { mapState } from 'vuex'
+
 export default {
+  components: {
+    AppLoadingSpinner
+  },
   data () {
     return {
       clipped: false,
@@ -62,6 +87,9 @@ export default {
       ],
       title: 'Vuetify.js'
     }
+  },
+  computed: {
+    ...mapState('appState', ['showLoadingSpinner', 'snackbar'])
   }
 }
 </script>

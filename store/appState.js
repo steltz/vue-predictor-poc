@@ -89,8 +89,14 @@ export const state = () => ({
       }
     }
   ],
+  showLoadingSpinner: false,
   selectedCompetition: null,
-  selectedCompetitionType: 'all'
+  selectedCompetitionType: 'all',
+  snackbar: {
+    visible: false,
+    color: '',
+    message: ''
+  }
 })
 
 export const mutations = {
@@ -111,9 +117,23 @@ export const mutations = {
   },
   SET_SELECTED_COMPETITION_TYPE (state, selectedCompetitionType) {
     state.selectedCompetitionType = selectedCompetitionType
+  },
+  TOGGLE_SNACKBAR (state, snackbar) {
+    state.snackbar = snackbar
+  },
+  TOGGLE_LOADING_SPINNER (state) {
+    state.showLoadingSpinner = !state.showLoadingSpinner
   }
 }
 
-export const actions = {}
+export const actions = {
+  async toggleLoadingSpinner ({ commit }) {
+    commit('TOGGLE_LOADING_SPINNER')
+    await sleep(2000)
+    commit('TOGGLE_LOADING_SPINNER')
+  }
+}
 
 export const getters = {}
+
+const sleep = delay => new Promise(resolve => setTimeout(resolve, delay))

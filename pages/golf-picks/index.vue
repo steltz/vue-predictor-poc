@@ -26,7 +26,13 @@ export default {
     ...mapState('appState', ['golfPlayerMatchups'])
   },
   methods: {
-    submitPicks () {
+    async submitPicks () {
+      await this.$store.dispatch('appState/toggleLoadingSpinner')
+      this.$store.commit('appState/TOGGLE_SNACKBAR', {
+        visible: true,
+        color: 'success',
+        message: 'Picks Saved'
+      })
       this.$router.push({ path: '/lobby' })
     }
   }
