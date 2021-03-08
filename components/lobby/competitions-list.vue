@@ -12,7 +12,9 @@
           $50,000
         </div>
         <div class="d-flex justify-center mt-7">
-          <v-btn outlined class="green" @click="setSelectedCompetition(competition)">Play Now</v-btn>
+          <v-btn outlined class="green" @click="setSelectedCompetition(competition)">
+            View
+          </v-btn>
         </div>
       </v-card>
     </v-col>
@@ -36,7 +38,7 @@ export default {
   methods: {
     setSelectedCompetition (competition) {
       const { type } = competition
-      const path = (type === 'golf') ? '/golf-picks' : '/premier-league-picks'
+      const path = (type === 'golf') ? '/golf-picks' : '/premier-picks'
       this.$store.commit('appState/SET_SELECTED_COMPETITION', competition)
       this.$router.push({ path })
     }
