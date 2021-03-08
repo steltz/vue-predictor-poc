@@ -32,7 +32,6 @@ export default {
     async submitPicks () {
       await this.$store.dispatch('appState/toggleLoadingSpinner')
       this.$store.commit('appState/TOGGLE_SNACKBAR', {
-        visible: true,
         color: 'success',
         message: 'Picks Saved'
       })

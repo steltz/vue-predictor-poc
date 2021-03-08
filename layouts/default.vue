@@ -11,7 +11,7 @@
       :width="64"
     />
     <v-snackbar
-      :value="snackbar.visible"
+      :value="isSnackbarVisible"
       :color="snackbar.color"
       :timeout="3000"
       top
@@ -75,6 +75,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: true,
+      isSnackbarVisible: false,
       items: [
         {
           title: 'About Me',
@@ -90,6 +91,14 @@ export default {
   },
   computed: {
     ...mapState('appState', ['showLoadingSpinner', 'snackbar'])
+  },
+  watch: {
+    snackbar () {
+      this.isSnackbarVisible = true
+      setTimeout(() => {
+        this.isSnackbarVisible = false
+      }, 3000)
+    }
   }
 }
 </script>

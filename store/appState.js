@@ -93,7 +93,6 @@ export const state = () => ({
   selectedCompetition: null,
   selectedCompetitionType: 'all',
   snackbar: {
-    visible: false,
     color: '',
     message: ''
   }
