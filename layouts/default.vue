@@ -54,10 +54,10 @@
       </v-container>
     </v-main>
     <v-footer :absolute="!fixed" app class="d-flex justify-space-between">
-      <v-btn icon :class="{ primary: $route.path === '/' }" @click="navigate('/')">
+      <v-btn icon :class="{ primary: $route.path === '/lobby' }" @click="navigate('/lobby')">
         <v-icon>mdi-home</v-icon>
       </v-btn>
-      <v-btn icon :class="{ primary: $route.path === '/lobby' }" @click="navigate('/lobby')">
+      <v-btn icon :class="{ primary: $route.path === '/my-entries' }" @click="navigate('/my-entries')">
         <v-icon>mdi-format-list-bulleted</v-icon>
       </v-btn>
       <v-btn icon :class="{ primary: $route.path === '/live-results' }" @click="navigate('/live-results')">

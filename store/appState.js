@@ -59,33 +59,39 @@ export const state = () => ({
       id: 1,
       team1: {
         name: 'Fulham',
-        score: 0
+        score: 0,
+        liveScore: 1
       },
       team2: {
         name: 'Man City',
-        score: 0
+        score: 0,
+        liveScore: 3
       }
     },
     {
       id: 2,
       team1: {
         name: 'Leichester',
-        score: 0
+        score: 0,
+        liveScore: 2
       },
       team2: {
         name: 'Sheffield Utd',
-        score: 0
+        score: 0,
+        liveScore: 2
       }
     },
     {
       id: 3,
       team1: {
         name: 'Arsenal',
-        score: 0
+        score: 0,
+        liveScore: 3
       },
       team2: {
         name: 'Tottenham',
-        score: 0
+        score: 0,
+        liveScore: 1
       }
     }
   ],
