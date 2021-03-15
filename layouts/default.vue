@@ -72,10 +72,16 @@
         </v-btn>
       </v-footer>
     </div>
-    <div class="show-desktop d-flex flex-column align-center justify-center px-16">
-      <div class="width-control d-flex flex-column align-center justify-center">
-        <p class="mb-16">Oops it looks like you are trying to view this prototype on a device other than a mobile phone, this prototype was built as mobile-only for the sake of speed. To view the prototype, please visit the web app from a mobile browser.</p>
-        <v-btn class="primary" x-large @click="copyLink()">Copy link to web app</v-btn>
+    <div class="show-desktop">
+      <div class="d-flex flex-column align-center justify-center px-16">
+        <div class="width-control d-flex flex-column align-center justify-center">
+          <p class="mb-16">
+            Oops it looks like you are trying to view this prototype on a device other than a mobile phone, this prototype was built as mobile-only for the sake of speed. To view the prototype, please visit the web app from a mobile browser.
+          </p>
+          <v-btn class="primary" x-large @click="copyLink()">
+            Copy link to web app
+          </v-btn>
+        </div>
       </div>
     </div>
   </v-app>
@@ -104,6 +110,22 @@ export default {
         {
           title: 'Lobby',
           to: '/lobby'
+        },
+        {
+          title: 'My Entries',
+          to: '/my-entries'
+        },
+        {
+          title: 'Live Results',
+          to: '/live-results'
+        },
+        {
+          title: 'Leagues',
+          to: '/leagues'
+        },
+        {
+          title: 'About the app',
+          to: '/my-account'
         }
       ],
       path: null,
